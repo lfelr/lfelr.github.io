@@ -3,10 +3,10 @@
 }
 
 header {
-    background-color: #d6d6d6;
-    margin: 3px;
-    padding: 10px;
-    text-align: center;
+  background-color: #d6d6d6;
+  text-align: center;
+  margin: 3px;
+  padding: 10px;
 }
 
 .button-container {
