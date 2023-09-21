@@ -15,11 +15,11 @@
   <p><i>Personal Project</i></p>
  </header>
 
-   <div class="menu-container">
+  <div class="menu-container">
     <div class="button-container">
       <a href="#index" class="button">Back to home</a>
     </div>
-</div>
+  </div>
   
 </body>
 
