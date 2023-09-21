@@ -9,6 +9,18 @@ header {
   padding: 10px;
 } 
 
+header:hover {
+  background-image: url(https://img.freepik.com/free-vector/pastel-gradient-1_78370-256.jpg?w=2000);
+  text-align: center;
+  margin: 3px;
+  padding: 10px;
+} 
+
+h1 {
+  color: #0C2D48;
+}
+  
+
 .button-container {
     display: flex;
     width: 520px;
