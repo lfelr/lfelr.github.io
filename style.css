@@ -16,29 +16,22 @@ h1 {
   
 
 .button-container {
-    display: flex;
-    width: 520px;
     background: lightgray;
-    overflow-y: auto;
-    flex: 0 1 20%;
 }
 
 .button-container > a {
     width: 100px;
     height: 100px;
-    gap: 10px;
+    
     justify-content: center;
-    align-content: space-evenly;
-    float: left;
+    float: center;
     background: white;   
     border-radius: 10px;
     margin: 15px;
     padding: 0 30px;
-    border-radius: 20px;
 }
 
 .navButton:hover {
-  background-image: linear-gradient(#b1ccda 49%, #96b4c5 51%);
-  color: #03324c;
+  background-image: url(https://img.freepik.com/free-vector/pastel-gradient-1_78370-256.jpg?w=2000);
 }
 
