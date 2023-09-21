@@ -6,8 +6,8 @@ header {
   text-align: center;
   margin: 3px;
   padding: 10px;
-  background-image: url(https://t3.ftcdn.net/jpg/05/73/54/72/360_F_573547219_z5Me421SBfTKoc15GRMyebq0vaXM9rUd.jpg);
-  image-width: 100%;
+  background-image: width="800" height="520"; url(https://t3.ftcdn.net/jpg/05/73/54/72/360_F_573547219_z5Me421SBfTKoc15GRMyebq0vaXM9rUd.jpg);
+  
 } 
 
 h1 p {
