@@ -18,6 +18,8 @@ h1 {
 .button-container {
     background: lightgray;
     display: flex;
+    gap: 30px;
+    justify-content: center;
 }
 
 .button-container > a {
