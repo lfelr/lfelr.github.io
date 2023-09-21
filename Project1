@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CSIS 304: Project 1</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+  <h1>Project 1</h1>
+  <p>Personal Project</p>
+
+   <div class="menu-container">
+    <div class="button-container">
+      <a href="#index" class="button">Back to home</a>
+    </div>
+</div>
+  
+</body>
+
+</html>
