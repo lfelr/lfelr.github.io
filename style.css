@@ -1,3 +1,14 @@
+* {
+  font-family: "Arial", Sans-serif;
+}
+
+header {
+    background-color: #d6d6d6;
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+}
+
 .button-container {
     width: 520px;
     background: gray;
@@ -11,3 +22,4 @@
     background: lightgray;   
     margin: 15px;
 }
+
