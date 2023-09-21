@@ -11,7 +11,7 @@ header {
 
 .button-container {
     width: 520px;
-    background: gray;
+    background: lightgray;
     overflow-y: auto;
 }
 
@@ -19,7 +19,15 @@ header {
     width: 100px;
     height: 100px;
     float: left;
-    background: lightgray;   
+    background: white;   
     margin: 15px;
+    padding: 0 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(#335b71 45%, #03324c 55%);
+}
+
+.navButton:hover {
+  background-image: linear-gradient(#b1ccda 49%, #96b4c5 51%);
+  color: #03324c;
 }
 
