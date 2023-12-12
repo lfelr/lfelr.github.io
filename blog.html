@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Blog Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  
+<body class="blog_body">
+  
+  <div class="Title_Block">
+    <img src="WAPOST.png" alt="Peter Steiner's cartoon, as published in The New Yorker" style="width:400px; height:auto;">
+    <p style="font-size: 12px"><i>Attribution:</i> Peter Steiner, published by The New Yorker on July 5, 1993.</p>
+  </div>
+
+<br>
+  
+  <div class="Input_Block">
+    <p>Currenlty not working...</p>    
+    <h2>Caption the Comic</h2>
+    
+        <form id="post-form">
+            <label for="post-title">Name:</label>
+            <input type="text" id="post-title" required>
+<br>
+            <label for="post-content">Content:</label>
+            <textarea id="post-content" rows="3" required></textarea>
+            <br>
+            <button type="button" onclick="createPost()">Post Caption</button>
+        </form>
+</div>
+
+    <div id="Posts_Block">
+        <h2>Posts</h2>
+        
+      <ul><i>Example:</i> What's a dogs favorite programming language? <br>HTML (Howling Treat Muzzel Language)
+          <br>
+          <!--<button type="edit_button" onclick="EditPost()" style="text-align: right;">edit</button>
+          
+          <button type="trash_button" onclick="DeletePost()">x</button>-->
+        </ul>
+      
+        <ul id="post-list"></ul>
+    </div>
+
+    <script>
+      
+        const apiUrl = 'http://web.cs.georgefox.edu:8080'; 
+
+        function createPost() {
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+
+            // Validate title and content
+            if (!title || !content) {
+                alert('Please enter both title and content.');
+                return;
+            }
+
+            // Placeholder for the AJAX request to create a post
+            const newPost = {
+                title: title,
+                content: content
+            };
+
+            // AJAX request to create a post
+            // Use proper authentication and error handling in a real-world scenario
+            fetch(apiUrl + '{project}/posts/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newPost),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Post created successfully');
+                document.getElementById('post-form').reset();
+                fetchPosts();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function fetchPosts() {
+            // Placeholder for the AJAX request to fetch posts
+            // Replace 'apiUrl' with the actual API endpoint for fetching posts
+            fetch(apiUrl + '{project}/posts/')
+                .then(response => response.json())
+                .then(posts => displayPosts(posts))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function displayPosts(posts) {
+            const postList = document.getElementById('post-list');
+            postList.innerHTML = '';
+
+            posts.forEach(post => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${post.title}</strong>: ${post.content} 
+                    <button onclick="editPost(${post.id})">Edit</button>
+                    <button onclick="deletePost(apiUrl + '')">Delete</button>`;
+                postList.appendChild(listItem);
+            });
+        }
+
+        function editPost(postId) {
+            // Placeholder for the AJAX request to fetch a specific post
+            // Replace 'apiUrl' with the actual API endpoint for fetching a post by ID
+            // Use proper authentication and error handling in a real-world scenario
+            fetch(`${apiUrl}/{project}/posts/user/{user_id}`)
+                .then(response => response.json())
+                .then(post => {
+                    // Populate the form with the post data for editing
+                    document.getElementById('post-title').value = post.title;
+                    document.getElementById('post-content').value = post.content;
+
+                    // Placeholder for the AJAX request to update a post
+                    // Replace 'apiUrl' with the actual API endpoint for updating a post
+                    // Use proper authentication and error handling in a real-world scenario
+                    fetch(`${apiUrl}/{project}/posts/{post_id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(post),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert('Post updated successfully');
+                        document.getElementById('post-form').reset();
+                        fetchPosts();
+                    })
+                    .catch(error => console.error('Error:', error));
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function deletePost(postId) {
+            // Placeholder for the AJAX request to delete a post
+            // Replace 'apiUrl' with the actual API endpoint for deleting a post
+            // Use proper authentication and error handling in a real-world scenario
+            fetch(`${apiUrl}/{project}/posts/{post_id}`, {
+                method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Post deleted successfully');
+                fetchPosts();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Fetch posts when the page loads
+        fetchPosts();
+    </script>
+</body>
+</html>
